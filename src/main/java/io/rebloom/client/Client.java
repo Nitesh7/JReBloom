@@ -50,10 +50,10 @@ public class Client {
   public Client(String host, int port, int timeout, int poolSize) {
     JedisPoolConfig conf = new JedisPoolConfig();
     conf.setMaxTotal(poolSize);
-    conf.setTestOnBorrow(false);
-    conf.setTestOnReturn(false);
-    conf.setTestOnCreate(false);
-    conf.setTestWhileIdle(false);
+    conf.setTestOnBorrow(true);
+    conf.setTestOnReturn(true);
+    conf.setTestOnCreate(true);
+    conf.setTestWhileIdle(true);
     conf.setMinEvictableIdleTimeMillis(60000);
     conf.setTimeBetweenEvictionRunsMillis(30000);
     conf.setNumTestsPerEvictionRun(-1);
