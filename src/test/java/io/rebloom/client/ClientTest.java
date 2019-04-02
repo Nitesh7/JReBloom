@@ -132,4 +132,12 @@ public class ClientTest {
         client.add("specialBloom", "foo");
     }
 
+    @Test
+    public void testDelete() {
+        cl.createFilter("myBloomDelete", 100, 0.001);
+        assertTrue(cl.add("myBloomDelete", "val1"));
+        assertTrue(cl.exists("myBloomDelete", "val1"));
+        cl.delete("myBloomDelete");
+        assertFalse(cl.exists("myBloomDelete", "val1"));
+    }
 }

@@ -197,7 +197,9 @@ public class Client {
    * Remove the filter
    * @param name
    */
-  public void delete(String name) {
-    _conn().getClient().del(name);
+  public boolean delete(String name) {
+    try (Jedis conn = _conn()) {
+      return sendCommand(conn, Command.DEL, name, "").getIntegerReply() != 0;
+    }
   }
 }
