@@ -89,11 +89,11 @@ public class ClusterClient extends JedisCluster {
 
 
     /**
-     * Reserve a bloom filter.
+     * .
      * @param name The key of the filter
      * @param initCapacity Optimize for this many items
      * @param errorRate The desired rate of false positives
-     *
+     * @return
      * Note that if a filter is not reserved, a new one is created when {@link #add(String, byte[])}
      * is called.
      */

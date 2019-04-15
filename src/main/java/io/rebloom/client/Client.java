@@ -193,10 +193,11 @@ public class Client {
     return sendMultiCommand(Command.MEXISTS, name, values);
   }
 
-  /**
-   * Remove the filter
-   * @param name
-   */
+    /**
+     * For deleting filter or redis-key
+     * @param name
+     * @return
+     */
   public boolean delete(String name) {
     try (Jedis conn = _conn()) {
       return sendCommand(conn, Command.DEL, name, "").getIntegerReply() != 0;
